@@ -31,7 +31,7 @@ NB: An Empty task field won't run and will display an error message.
 ### OR
 1. Just click the link below to access the livesite of the project.
 
-[Live Demo]()
+[Live Demo](https://abdulmujeebsimpletodolist.netlify.app/)
 
 
 ## Project Purpose
