@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 25px;
+    margin: 1em 0.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 15px;
+    margin: 1em 0.5em;
+    text-align: center;
+    text-align-last: break;
+    font-weight: normal;
+}
+
+ol {
+    margin: 1em;
+    list-style-position: inside;
+}
+
+ol > li {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+ol > li button {
+    position: absolute;
+    right: 1;
+    right: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 15px;
+}
+
+input[type="text"]:focus {
+    padding: 8px;
+}
+
+input[type="text"]::placeholder {
+    font-size: 12px;
+    font-family: cursive;
+}

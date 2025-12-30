@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Simple to do List</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Simple To-Do List</h1>
+        <h2>
+            Type what you plan to do in the text field below and press "Add to
+            List" button to save it to the list.
+        </h2>
+        <form action="#">
+            <input type="text" id="taskAdd" placeholder="Add task here" />
+            <button type="submit" id="addButton">Add to List</button>
+        </form>
+        <ol></ol>
+        <script>
+            const mainBox = document.querySelector("ol");
+            const btn = document.getElementById("addButton");
+            const task = document.getElementById("taskAdd");
+
+            function itemSaver(e) {
+                e.preventDefault();
+                let typed = task.value.trim();
+                if (typed === "") {
+                    alert("Please enter a task!");
+                    return;
+                }
+                const li = document.createElement("li");
+                const listText = document.createElement("span");
+                const delBtn = document.createElement("button");
+
+                listText.appendChild(document.createTextNode(typed));
+                delBtn.textContent = "Remove";
+                delBtn.style.backgroundColor = "Red";
+                delBtn.style.color = "white";
+                delBtn.style.padding = "2px";
+
+                li.appendChild(listText);
+                li.appendChild(delBtn);
+                mainBox.appendChild(li);
+
+                delBtn.addEventListener("click", removeLi);
+                task.value = "";
+            }
+
+            function removeLi(e) {
+                const confirmed = confirm(
+                    "Are you sure you want to delete this item?"
+                );
+                if (confirmed === true) {
+                    e.target.parentElement.remove();
+                } else {
+                }
+            }
+
+            btn.addEventListener("click", itemSaver);
+        </script>
+    </body>
+</html>
